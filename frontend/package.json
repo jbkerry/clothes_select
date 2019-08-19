@@ -1,0 +1,9 @@
+{
+  "name": "fs-project-frontend",
+  "version": "1.0.0",
+  "description": "Frontend portion of fs-project",
+  "main": "index.js",
+  "repository": "https://github.com/jbkerry/fs-project",
+  "author": "Jon Kerry",
+  "license": "MIT"
+}
