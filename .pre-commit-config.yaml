@@ -20,4 +20,5 @@
     args: [
       --max-line-length=120,
       --disable=import-error,
+      --disable=missing-docstring,
     ] 

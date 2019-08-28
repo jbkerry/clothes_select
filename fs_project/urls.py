@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from firstapp import views
+
 urlpatterns = [  # pylint: disable=invalid-name
     path('admin/', admin.site.urls),
+    path('', views.home_page, name="home")
 ]
