@@ -1,5 +1,16 @@
 version: 2.1
 jobs:
+  pre_commit_hooks:
+    docker:
+      - image: circleci/python:3.6
+    steps:
+      - checkout
+      - run:
+          name: Run pre-commit checks
+          command: |
+            sudo pip install pre-commit==1.18.2
+            pre-commit run --all-files pylint
+            pre-commit run --all-files mypy
   frontend_tests:
     docker:
       - image: circleci/node:8
@@ -46,5 +57,6 @@ workflows:
   version: 2.1
   run_tests:
     jobs:
+      - pre_commit_hooks
       - frontend_tests
       - python_tests
