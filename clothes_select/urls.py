@@ -1,4 +1,4 @@
-"""fs_project URL Configuration
+"""clothes_select URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from firstapp import views
+from clothing_selector import views
 
 urlpatterns = [  # pylint: disable=invalid-name
     path('admin/', admin.site.urls),

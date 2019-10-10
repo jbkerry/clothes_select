@@ -1,5 +1,5 @@
 """
-WSGI config for fs_project project.
+WSGI config for clothes_select project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fs_project.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'clothes_select.settings')
 
 application = get_wsgi_application()
