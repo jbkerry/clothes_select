@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import resolve
 from django.http import HttpRequest
 
+from clothing_selector.models import Clothes
 from clothing_selector.views import home_page
 
 
@@ -18,3 +19,12 @@ class HomePageTest(TestCase):
         self.assertTrue(html.startswith('<html>'))
         self.assertIn('<title>To-Do lists</title>', html)
         self.assertTrue(html.endswith('</html>'))
+
+
+class ClothesListTest(TestCase):
+
+    def test_returns_list_of_clothes(self):
+        Clothes.objects.create(clothing_type='JU', colour='blue')
+        Clothes.objects.create(clothing_type='TS', colour='white')
+        response = self.client.get("/api/clothes/", format='json')
+        self.assertEqual(len(response.data), 2)

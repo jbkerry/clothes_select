@@ -20,5 +20,6 @@ from clothing_selector import views
 
 urlpatterns = [  # pylint: disable=invalid-name
     path('admin/', admin.site.urls),
-    path('', views.home_page, name="home")
+    path('', views.home_page, name="home"),
+    path('api/clothes/', views.clothing_list, name="clothes")
 ]
