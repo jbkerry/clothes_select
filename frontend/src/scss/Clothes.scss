@@ -1,0 +1,10 @@
+$subtle-border: 1px solid #ccc;
+
+table {
+  border: $subtle-border;
+  width: 100%;
+
+  td {
+    border: $subtle-border;
+  }
+}

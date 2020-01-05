@@ -14,12 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 
 from clothing_selector import views
 
 urlpatterns = [  # pylint: disable=invalid-name
     path('admin/', admin.site.urls),
     path('', views.home_page, name="home"),
-    path('api/clothes/', views.clothing_list, name="clothes")
+    re_path(r'^api/clothes/(?P<clothing_type>[A-Z]{2})/$', views.clothing_list, name="clothes")
 ]

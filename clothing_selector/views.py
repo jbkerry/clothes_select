@@ -11,9 +11,9 @@ def home_page(request):  # pylint: disable=unused-argument
 
 
 @api_view(['GET'])
-def clothing_list(request):
+def clothing_list(request, clothing_type):
     if request.method == 'GET':
-        clothes = Clothes.objects.all()
+        clothes = Clothes.objects.filter(clothing_type=clothing_type).all()
         serializer = ClothesSerializer(clothes, context={'request': request}, many=True)
         return Response(serializer.data)
     return None
