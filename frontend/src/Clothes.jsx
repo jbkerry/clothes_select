@@ -25,7 +25,7 @@ const ClothesList = ({ clothingType }) => {
               {item.readable_name}
             </td>
             <td className="img-cell">
-              <img className="clothes-image" src={item.image_path} alt={item.readable_name} />
+              <ClothesImage imagePath={item.image_path} altText={item.readable_name} />
             </td>
           </tr>
         ))}
@@ -35,6 +35,21 @@ const ClothesList = ({ clothingType }) => {
 };
 ClothesList.propTypes = {
   clothingType: PropTypes.oneOf(['JU', 'TS', 'SI', 'TR', 'SH']).isRequired,
+};
+
+export const ClothesImage = ({ imagePath, altText }) => {
+  if (imagePath) {
+    return <img className="clothes-image" src={imagePath} alt={altText} />;
+  }
+  return <span>No image available</span>;
+};
+ClothesImage.propTypes = {
+  imagePath: PropTypes.string,
+  altText: PropTypes.string,
+};
+ClothesImage.defaultProps = {
+  imagePath: null,
+  altText: null,
 };
 
 export default ClothesList;
