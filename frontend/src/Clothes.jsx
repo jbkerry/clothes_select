@@ -20,7 +20,14 @@ const ClothesList = ({ clothingType }) => {
     <table>
       <tbody>
         {clothes.map((item) => (
-          <tr key={item.id}><td>{item.readable_name}</td></tr>
+          <tr key={item.id}>
+            <td className="name-cell">
+              {item.readable_name}
+            </td>
+            <td className="img-cell">
+              <img className="clothes-image" src={item.image_path} alt={item.readable_name} />
+            </td>
+          </tr>
         ))}
       </tbody>
     </table>

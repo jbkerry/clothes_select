@@ -25,8 +25,9 @@ class ClothesListTest(TestCase):
 
     def test_returns_list_of_clothes(self):
         Clothes.objects.create(clothing_type='JU', colour='blue')
+        Clothes.objects.create(clothing_type='JU', colour='red')
         Clothes.objects.create(clothing_type='TS', colour='white')
-        response = self.client.get("/api/clothes/", format='json')
+        response = self.client.get("/api/clothes/JU/", format='json')
         data = response.data
         self.assertEqual(len(data), 2)
         self.assertEqual(data[0]["clothing_type"], "JU")
