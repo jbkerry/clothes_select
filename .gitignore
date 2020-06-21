@@ -4,4 +4,5 @@ frontend/node_modules/
 yarn.lock
 __pycache__
 .mypy_cache
+.python-version
 db.sqlite3
